@@ -35,3 +35,9 @@ body {
     color: var(--light-grey);
     background-color: var(--dark-blue);
 }
+
+.sidebar-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
