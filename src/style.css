@@ -56,6 +56,68 @@ body {
     cursor: pointer;
 }
 
+/* PopUp */
+.edit-popup {
+    position: relative;
+}
+
+.edit-form {
+    visibility: hidden;
+    width: 160px;
+    background-color: var(--light-blue);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.edit-form input {
+    width: 90%;
+    display: block;
+    text-align: center;
+    margin-left: 8px;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.edit-form span {
+    padding: 5px;
+}
+
+/* Toggle this class - hide and show the popup */
+.show {
+    visibility: visible;
+    z-index: 0;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .sidebar-notifications {
     display: flex;
     flex-direction: column;
