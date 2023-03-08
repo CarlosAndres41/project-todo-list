@@ -70,15 +70,18 @@ body {
     gap: 10px;
 }
 
-.today-logo {
+.today-logo,
+.today .notif-text:hover {
     color: var(--green);
 }
 
-.upcoming-logo {
+.upcoming-logo,
+.upcoming .notif-text:hover {
     color: var(--orange);
 }
 
-.priority-logo {
+.priority-logo,
+.high-priority .notif-text:hover {
     color: var(--red);
 }
 
