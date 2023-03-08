@@ -7,8 +7,8 @@ const welcomeUser = document.querySelector('.sidebar-user strong');
 welcomeUser.textContent = newUser.name;
 
 // Edit name popup
-
-let popup = document.querySelector('.edit-user');
-popup.addEventListener('click', toggleNamePopUp);
-
-console.log('Testing');
+let editNamePopup = document.querySelector('.edit-user');
+editNamePopup.addEventListener('click', toggleNamePopUp);
+// Edit name cancel button
+let nameCancel = document.querySelector('.form-cancel');
+nameCancel.addEventListener('click', toggleNamePopUp);

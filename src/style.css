@@ -121,10 +121,12 @@ body {
 
 .form-check {
     color: var(--dark-green);
+    cursor: pointer;
 }
 
 .form-cancel {
     color: var(--red);
+    cursor: pointer;
 }
 
 /* Sidebar notifications */
