@@ -176,3 +176,15 @@ body {
     width: 50%;
     align-self: center;
 }
+
+/* My projects */
+
+.my-projects {
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-projects span {
+    opacity: 0.3;
+    cursor: pointer;
+}
