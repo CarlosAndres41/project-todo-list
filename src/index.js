@@ -6,7 +6,7 @@ const welcomeUser = document.querySelector('.sidebar-user strong');
 welcomeUser.textContent = newUser.name;
 
 // Edit name popup
-let popup = document.querySelector('.edit-popup');
+let popup = document.querySelector('.edit-user');
 popup.addEventListener('click', function () {
     let popupForm = document.querySelector('.edit-form');
     popupForm.classList.toggle('show');
