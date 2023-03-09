@@ -119,12 +119,14 @@ body {
     }
 }
 
-.form-check {
+.form-check,
+.ok {
     color: var(--dark-green);
     cursor: pointer;
 }
 
-.form-cancel {
+.form-cancel,
+.cancel {
     color: var(--red);
     cursor: pointer;
 }
@@ -204,4 +206,27 @@ body {
 .project div {
     display: flex;
     gap: 5px;
+}
+
+.edit-current-project {
+    /* visibility: hidden; */
+    width: 160px;
+    background-color: var(--light-blue);
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 10px;
+    position: absolute;
+    /* z-index: 1; */
+    bottom: 0%;
+    left: 150%;
+    margin-left: -80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-current-project input {
+    border: none;
+    padding: 3px;
+    width: 90%;
 }
