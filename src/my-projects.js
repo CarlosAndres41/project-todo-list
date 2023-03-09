@@ -15,6 +15,8 @@ function addProject(projectName) {
     logo1.classList.add('fa-solid');
     logo1.classList.add('fa-pen');
     logo1.classList.add('fa-2xs');
+    logo1.classList.add('edit-project-btn');
+    logo1.setAttribute('value', projectName);
     span1.appendChild(logo1);
     let span2 = document.createElement('span');
     span2.classList.add('edit-project');

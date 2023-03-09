@@ -62,7 +62,8 @@ body {
     position: relative;
 }
 
-.edit-form {
+.edit-form,
+.edit-current-project {
     visibility: hidden;
     width: 160px;
     background-color: var(--light-blue);
@@ -209,14 +210,6 @@ body {
 }
 
 .edit-current-project {
-    /* visibility: hidden; */
-    width: 160px;
-    background-color: var(--light-blue);
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 10px;
-    position: absolute;
-    /* z-index: 1; */
     bottom: 0%;
     left: 150%;
     margin-left: -80px;

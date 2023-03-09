@@ -1,6 +1,6 @@
 import './style.css';
 import { userFactory } from './user';
-import { toggleNamePopUp } from './popups';
+import { toggleNamePopUp, toggleEditProject } from './popups';
 import { addProject } from './my-projects';
 
 const newUser = userFactory('User', {});
@@ -31,4 +31,13 @@ nameConfirm.addEventListener('click', toggleNamePopUp);
 // Create Projects
 Object.keys(newUser.projects).forEach((project) => {
     addProject(project);
+});
+
+// Edit Project name
+// all edit buttons
+let editProjectBtns = document.querySelectorAll('.edit-project-btn');
+editProjectBtns.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        toggleEditProject(e.target.attributes.value.nodeValue);
+    });
 });

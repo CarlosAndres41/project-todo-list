@@ -3,9 +3,15 @@ function toggleNamePopUp() {
     popupForm.classList.toggle('show');
 }
 
+function toggleEditProject(projectName) {
+    let editPopUp = document.getElementById(`${projectName}1`);
+    editPopUp.classList.toggle('show');
+}
+
 function projectEditPopUp(projectName) {
     let container = document.createElement('div');
     container.classList.add('edit-current-project');
+    container.setAttribute('id', `${projectName}1`);
 
     let input = document.createElement('input');
     input.setAttribute('type', 'text');
@@ -35,4 +41,4 @@ function projectEditPopUp(projectName) {
     return container;
 }
 
-export { toggleNamePopUp, projectEditPopUp };
+export { toggleNamePopUp, projectEditPopUp, toggleEditProject };
