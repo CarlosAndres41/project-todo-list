@@ -21,8 +21,9 @@ function addProject(projectName) {
     let span2 = document.createElement('span');
     span2.classList.add('edit-project');
     let logo2 = document.createElement('i');
-    logo2.classList.add('fa-solid');
-    logo2.classList.add('fa-xmark');
+    logo2.classList.add('fa-regular');
+    logo2.classList.add('fa-trash-can');
+    logo2.classList.add('fa-xs');
     span2.appendChild(logo2);
 
     buttons.appendChild(span1);
