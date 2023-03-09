@@ -96,6 +96,14 @@ function renderProjects(user) {
             toggleDeleteProject(e.target.attributes.value.nodeValue);
         });
     });
+
+    // Cancel delete
+    let cancelDeleteProjectBtns = document.querySelectorAll('.cancel-delete');
+    cancelDeleteProjectBtns.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            toggleDeleteProject(e.target.attributes.value.nodeValue);
+        });
+    });
 }
 
 export { addProject, removeAllProjects, renderProjects };
