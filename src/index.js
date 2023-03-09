@@ -37,3 +37,10 @@ editProjectBtns.forEach((button) => {
         toggleEditProject(e.target.attributes.value.nodeValue);
     });
 });
+// All cancel edit buttons
+let cancelEditProjectBtns = document.querySelectorAll('.cancel');
+cancelEditProjectBtns.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        toggleEditProject(e.target.attributes.value.nodeValue);
+    });
+});

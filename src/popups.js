@@ -32,6 +32,7 @@ function projectEditPopUp(projectName) {
     let logo2 = document.createElement('i');
     logo2.classList.add('fa-solid');
     logo2.classList.add('fa-xmark');
+    logo2.setAttribute('value', projectName);
     span2.appendChild(logo2);
     buttons.appendChild(span1);
     buttons.appendChild(span2);
