@@ -1,13 +1,11 @@
 import './style.css';
-import { userFactory } from './user';
+import { userFactory, editProjectName } from './user';
 import { toggleNamePopUp, toggleEditProject } from './popups';
-import { addProject } from './my-projects';
+import { addProject, removeAllProjects } from './my-projects';
 
 const newUser = userFactory('User');
 const welcomeUser = document.querySelector('.sidebar-user strong');
 welcomeUser.textContent = newUser.name;
-
-console.log(newUser.projects);
 
 // Edit name popup
 let editNamePopup = document.querySelector('.edit-user');
@@ -42,5 +40,14 @@ let cancelEditProjectBtns = document.querySelectorAll('.cancel');
 cancelEditProjectBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
         toggleEditProject(e.target.attributes.value.nodeValue);
+    });
+});
+// All confirm edit buttons, edit project name
+let confirmEditProjectBtns = document.querySelectorAll('.ok');
+confirmEditProjectBtns.forEach((button) => {
+    let btnsArray = Array.from(confirmEditProjectBtns);
+    let index = btnsArray.indexOf(button);
+    button.addEventListener('click', () => {
+        editProjectName(newUser, index, 'New Name');
     });
 });

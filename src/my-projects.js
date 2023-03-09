@@ -6,6 +6,7 @@ function addProject(projectName) {
     prDiv.classList.add('project');
 
     let name = document.createElement('p');
+    name.classList.add(`${projectName}-text`);
     name.textContent = projectName;
 
     let buttons = document.createElement('div');
@@ -34,4 +35,11 @@ function addProject(projectName) {
     container.appendChild(prDiv);
 }
 
-export { addProject };
+function removeAllProjects() {
+    let container = document.querySelector('.projects-container');
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
+
+export { addProject, removeAllProjects };

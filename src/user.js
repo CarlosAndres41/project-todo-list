@@ -6,4 +6,8 @@ const userFactory = (name) => {
     return { name, projects };
 };
 
-export { userFactory };
+const editProjectName = (user, index, newName) => {
+    user.projects[index].projectName = newName;
+};
+
+export { userFactory, editProjectName };
