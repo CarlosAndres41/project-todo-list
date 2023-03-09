@@ -25,8 +25,8 @@ nameConfirm.addEventListener('click', () => {
 nameConfirm.addEventListener('click', toggleNamePopUp);
 
 // Create Projects
-Object.keys(newUser.projects).forEach((project) => {
-    addProject(project);
+newUser.projects.forEach((project) => {
+    addProject(project.projectName);
 });
 
 // Edit Project name
