@@ -64,7 +64,8 @@ body {
 
 .edit-form,
 .edit-current-project,
-.delete-current-project {
+.delete-current-project,
+.add-new-project {
     visibility: hidden;
     width: 160px;
     background-color: var(--light-blue);
@@ -213,7 +214,8 @@ body {
 }
 
 .edit-current-project,
-.delete-current-project {
+.delete-current-project,
+.add-new-project {
     bottom: 0%;
     left: 150%;
     margin-left: -80px;
