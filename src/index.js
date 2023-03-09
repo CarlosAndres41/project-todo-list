@@ -1,7 +1,7 @@
 import './style.css';
-import { userFactory, editProjectName } from './user';
-import { toggleNamePopUp, toggleEditProject } from './popups';
-import { addProject, removeAllProjects } from './my-projects';
+import { userFactory } from './user';
+import { toggleNamePopUp } from './popups';
+import { renderProjects } from './my-projects';
 
 const newUser = userFactory('User');
 const welcomeUser = document.querySelector('.sidebar-user strong');
@@ -22,32 +22,4 @@ nameConfirm.addEventListener('click', () => {
 });
 nameConfirm.addEventListener('click', toggleNamePopUp);
 
-// Create Projects
-newUser.projects.forEach((project) => {
-    addProject(project.projectName);
-});
-
-// Edit Project name
-// all edit buttons
-let editProjectBtns = document.querySelectorAll('.edit-project-btn');
-editProjectBtns.forEach((button) => {
-    button.addEventListener('click', (e) => {
-        toggleEditProject(e.target.attributes.value.nodeValue);
-    });
-});
-// All cancel edit buttons
-let cancelEditProjectBtns = document.querySelectorAll('.cancel');
-cancelEditProjectBtns.forEach((button) => {
-    button.addEventListener('click', (e) => {
-        toggleEditProject(e.target.attributes.value.nodeValue);
-    });
-});
-// All confirm edit buttons, edit project name
-let confirmEditProjectBtns = document.querySelectorAll('.ok');
-confirmEditProjectBtns.forEach((button) => {
-    let btnsArray = Array.from(confirmEditProjectBtns);
-    let index = btnsArray.indexOf(button);
-    button.addEventListener('click', () => {
-        editProjectName(newUser, index, 'New Name');
-    });
-});
+renderProjects(newUser);

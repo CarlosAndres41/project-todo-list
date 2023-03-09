@@ -1,4 +1,5 @@
-import { projectEditPopUp } from './popups';
+import { projectEditPopUp, toggleEditProject } from './popups';
+import { editProjectName } from './user';
 
 function addProject(projectName) {
     let container = document.querySelector('.projects-container');
@@ -42,4 +43,36 @@ function removeAllProjects() {
     }
 }
 
-export { addProject, removeAllProjects };
+function renderProjects(user) {
+    // Create Projects
+    user.projects.forEach((project) => {
+        addProject(project.projectName);
+    });
+
+    // Edit Project name
+    // all edit buttons
+    let editProjectBtns = document.querySelectorAll('.edit-project-btn');
+    editProjectBtns.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            toggleEditProject(e.target.attributes.value.nodeValue);
+        });
+    });
+    // All cancel edit buttons
+    let cancelEditProjectBtns = document.querySelectorAll('.cancel');
+    cancelEditProjectBtns.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            toggleEditProject(e.target.attributes.value.nodeValue);
+        });
+    });
+    // All confirm edit buttons, edit project name
+    let confirmEditProjectBtns = document.querySelectorAll('.ok');
+    confirmEditProjectBtns.forEach((button) => {
+        let btnsArray = Array.from(confirmEditProjectBtns);
+        let index = btnsArray.indexOf(button);
+        button.addEventListener('click', () => {
+            editProjectName(user, index, 'New Name');
+        });
+    });
+}
+
+export { addProject, removeAllProjects, renderProjects };
