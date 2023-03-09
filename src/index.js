@@ -1,11 +1,10 @@
 import './style.css';
-import { userFactory } from './user';
+import { userFactory, displayName } from './user';
 import { toggleNamePopUp } from './popups';
 import { renderProjects } from './my-projects';
 
 const newUser = userFactory('User');
-const welcomeUser = document.querySelector('.sidebar-user strong');
-welcomeUser.textContent = newUser.name;
+displayName(newUser);
 
 // Edit name popup
 let editNamePopup = document.querySelector('.edit-user');

@@ -6,6 +6,11 @@ const userFactory = (name) => {
     return { name, projects };
 };
 
+const displayName = (user) => {
+    const welcomeUser = document.querySelector('.sidebar-user strong');
+    welcomeUser.textContent = user.name;
+};
+
 const editProjectName = (user, index, newName) => {
     user.projects[index].projectName = newName;
 };
@@ -17,4 +22,4 @@ const confirmDeleteProject = (user, index) => {
     }
 };
 
-export { userFactory, editProjectName, confirmDeleteProject };
+export { userFactory, editProjectName, confirmDeleteProject, displayName };
