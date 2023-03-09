@@ -13,7 +13,7 @@ function toggleDeleteProject(projectName) {
     editPopUp.classList.toggle('show');
 }
 
-function toggleAddProject() {
+function addProject() {
     let addButton = document.querySelector(`.add-project-btn`);
     addButton.addEventListener('click', () => {
         let popup = document.querySelector('.add-new-project');
@@ -93,5 +93,5 @@ export {
     toggleEditProject,
     deleteProject,
     toggleDeleteProject,
-    toggleAddProject,
+    addProject,
 };
