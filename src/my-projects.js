@@ -70,7 +70,11 @@ function renderProjects(user) {
         let btnsArray = Array.from(confirmEditProjectBtns);
         let index = btnsArray.indexOf(button);
         button.addEventListener('click', () => {
-            editProjectName(user, index, 'NewName');
+            let inputValue = document.getElementById(
+                `${user.projects[index].projectName}`
+            );
+            let newValue = inputValue.value;
+            editProjectName(user, index, newValue);
             removeAllProjects();
             renderProjects(user);
         });
