@@ -62,6 +62,7 @@ function deleteProject(projectName) {
     let logo1 = document.createElement('i');
     logo1.classList.add('fa-solid');
     logo1.classList.add('fa-check');
+    logo1.classList.add('delete-confirm-btn');
     span1.appendChild(logo1);
     let span2 = document.createElement('span');
     span2.classList.add('cancel-delete');

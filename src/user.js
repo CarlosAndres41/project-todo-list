@@ -10,4 +10,11 @@ const editProjectName = (user, index, newName) => {
     user.projects[index].projectName = newName;
 };
 
-export { userFactory, editProjectName };
+const confirmDeleteProject = (user, index) => {
+    if (index > -1) {
+        // only splice array when item is found
+        user.projects.splice(index, 1); // 2nd parameter means remove one item only
+    }
+};
+
+export { userFactory, editProjectName, confirmDeleteProject };

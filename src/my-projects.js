@@ -4,7 +4,7 @@ import {
     deleteProject,
     toggleDeleteProject,
 } from './popups';
-import { editProjectName } from './user';
+import { editProjectName, confirmDeleteProject } from './user';
 
 function addProject(projectName) {
     let container = document.querySelector('.projects-container');
@@ -102,6 +102,20 @@ function renderProjects(user) {
     cancelDeleteProjectBtns.forEach((button) => {
         button.addEventListener('click', (e) => {
             toggleDeleteProject(e.target.attributes.value.nodeValue);
+        });
+    });
+
+    // All confirm delete buttons, delete project
+    let confirmDeleteProjectBtns = document.querySelectorAll(
+        '.delete-confirm-btn'
+    );
+    confirmDeleteProjectBtns.forEach((button) => {
+        let btnsArray = Array.from(confirmDeleteProjectBtns);
+        let index = btnsArray.indexOf(button);
+        button.addEventListener('click', () => {
+            confirmDeleteProject(user, index);
+            removeAllProjects();
+            renderProjects(user);
         });
     });
 }
