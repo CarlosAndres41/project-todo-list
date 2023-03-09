@@ -1,3 +1,5 @@
+import { projectEditPopUp } from './popups';
+
 function addProject(projectName) {
     let container = document.querySelector('.projects-container');
     let prDiv = document.createElement('div');
@@ -11,7 +13,7 @@ function addProject(projectName) {
     span1.classList.add('edit-project');
     let logo1 = document.createElement('i');
     logo1.classList.add('fa-solid');
-    logo1.classList.add('fa-pen');
+    logo1.classList.add('fa-check');
     logo1.classList.add('fa-2xs');
     span1.appendChild(logo1);
     let span2 = document.createElement('span');
@@ -25,6 +27,7 @@ function addProject(projectName) {
     buttons.appendChild(span2);
     prDiv.appendChild(name);
     prDiv.appendChild(buttons);
+    buttons.appendChild(projectEditPopUp(projectName));
     container.appendChild(prDiv);
 }
 
