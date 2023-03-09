@@ -3,13 +3,9 @@ import { userFactory } from './user';
 import { toggleNamePopUp, toggleEditProject } from './popups';
 import { addProject } from './my-projects';
 
-const newUser = userFactory('User', {});
+const newUser = userFactory('User');
 const welcomeUser = document.querySelector('.sidebar-user strong');
 welcomeUser.textContent = newUser.name;
-
-//Add default projects to user
-newUser.projects['Home'] = {};
-newUser.projects['Work'] = {};
 
 console.log(newUser.projects);
 
