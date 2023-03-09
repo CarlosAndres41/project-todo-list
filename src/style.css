@@ -184,7 +184,23 @@ body {
     justify-content: space-between;
 }
 
-.my-projects span {
+.my-projects span,
+.edit-project {
     opacity: 0.3;
     cursor: pointer;
+}
+
+.projects-container {
+    padding: 1rem 0 0 1rem;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project div {
+    display: flex;
+    gap: 5px;
 }
