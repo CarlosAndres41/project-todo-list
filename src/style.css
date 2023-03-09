@@ -63,7 +63,8 @@ body {
 }
 
 .edit-form,
-.edit-current-project {
+.edit-current-project,
+.delete-current-project {
     visibility: hidden;
     width: 160px;
     background-color: var(--light-blue);
@@ -121,13 +122,15 @@ body {
 }
 
 .form-check,
-.ok {
+.ok,
+.delete-confirm {
     color: var(--dark-green);
     cursor: pointer;
 }
 
 .form-cancel,
-.cancel {
+.cancel,
+.cancel-delete {
     color: var(--red);
     cursor: pointer;
 }
@@ -209,7 +212,8 @@ body {
     gap: 5px;
 }
 
-.edit-current-project {
+.edit-current-project,
+.delete-current-project {
     bottom: 0%;
     left: 150%;
     margin-left: -80px;

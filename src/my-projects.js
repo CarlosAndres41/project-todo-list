@@ -1,4 +1,9 @@
-import { projectEditPopUp, toggleEditProject } from './popups';
+import {
+    projectEditPopUp,
+    toggleEditProject,
+    deleteProject,
+    toggleDeleteProject,
+} from './popups';
 import { editProjectName } from './user';
 
 function addProject(projectName) {
@@ -26,6 +31,8 @@ function addProject(projectName) {
     logo2.classList.add('fa-regular');
     logo2.classList.add('fa-trash-can');
     logo2.classList.add('fa-xs');
+    logo2.classList.add('delete-project-btn');
+    logo2.setAttribute('value', projectName);
     span2.appendChild(logo2);
 
     buttons.appendChild(span1);
@@ -33,6 +40,7 @@ function addProject(projectName) {
     prDiv.appendChild(name);
     prDiv.appendChild(buttons);
     buttons.appendChild(projectEditPopUp(projectName));
+    buttons.appendChild(deleteProject(projectName));
     container.appendChild(prDiv);
 }
 
@@ -77,6 +85,15 @@ function renderProjects(user) {
             editProjectName(user, index, newValue);
             removeAllProjects();
             renderProjects(user);
+        });
+    });
+
+    // Delete Project
+    // all delete buttons
+    let deleteProjectBtns = document.querySelectorAll('.delete-project-btn');
+    deleteProjectBtns.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            toggleDeleteProject(e.target.attributes.value.nodeValue);
         });
     });
 }
