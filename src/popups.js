@@ -13,6 +13,24 @@ function toggleDeleteProject(projectName) {
     editPopUp.classList.toggle('show');
 }
 
+function editUserName(user) {
+    // Edit name popup
+    let editNamePopup = document.querySelector('.edit-user');
+    editNamePopup.addEventListener('click', toggleNamePopUp);
+    // Edit name cancel button
+    let nameCancel = document.querySelector('.form-cancel');
+    nameCancel.addEventListener('click', toggleNamePopUp);
+    // Edit name
+    let nameConfirm = document.querySelector('.form-check');
+    nameConfirm.addEventListener('click', () => {
+        let nameInput = document.getElementById('name');
+        const welcomeUser = document.querySelector('.sidebar-user strong');
+        user.name = nameInput.value;
+        welcomeUser.textContent = user.name;
+    });
+    nameConfirm.addEventListener('click', toggleNamePopUp);
+}
+
 function addProject() {
     let addButton = document.querySelector(`.add-project-btn`);
     addButton.addEventListener('click', () => {
@@ -94,4 +112,5 @@ export {
     deleteProject,
     toggleDeleteProject,
     addProject,
+    editUserName,
 };
