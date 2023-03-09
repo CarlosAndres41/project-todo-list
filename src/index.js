@@ -1,6 +1,6 @@
 import './style.css';
 import { userFactory, displayName } from './user';
-import { toggleNamePopUp } from './popups';
+import { toggleNamePopUp, toggleAddProject } from './popups';
 import { renderProjects } from './my-projects';
 
 const newUser = userFactory('User');
@@ -21,4 +21,5 @@ nameConfirm.addEventListener('click', () => {
 });
 nameConfirm.addEventListener('click', toggleNamePopUp);
 
+toggleAddProject();
 renderProjects(newUser);

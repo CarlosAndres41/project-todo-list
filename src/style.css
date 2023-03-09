@@ -124,14 +124,16 @@ body {
 
 .form-check,
 .ok,
-.delete-confirm {
+.delete-confirm,
+.add-check {
     color: var(--dark-green);
     cursor: pointer;
 }
 
 .form-cancel,
 .cancel,
-.cancel-delete {
+.cancel-delete,
+.add-cancel {
     color: var(--red);
     cursor: pointer;
 }
@@ -146,7 +148,8 @@ body {
 
 .today,
 .upcoming,
-.high-priority {
+.high-priority,
+.add-new-project {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -191,7 +194,7 @@ body {
     justify-content: space-between;
 }
 
-.my-projects span,
+.add-pr-button,
 .edit-project {
     opacity: 0.3;
     cursor: pointer;
@@ -224,8 +227,14 @@ body {
     align-items: center;
 }
 
-.edit-current-project input {
+.edit-current-project input,
+.add-new-project input {
     border: none;
+    border-radius: 6px;
     padding: 3px;
     width: 90%;
+}
+
+.my-projects {
+    position: relative;
 }
