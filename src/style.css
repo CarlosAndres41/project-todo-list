@@ -238,3 +238,11 @@ body {
 .my-projects {
     position: relative;
 }
+
+/* Main display */
+
+.backgroud-img-conteiner {
+    background-image: url(./imgs/qwd83nc4xxf41.jpg);
+    opacity: 0.5;
+    height: 100%;
+}
