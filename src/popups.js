@@ -32,8 +32,15 @@ function editUserName(user) {
 }
 
 function addProject() {
+    // Toggle pop up when clicking the '+' button
     let addButton = document.querySelector(`.add-project-btn`);
     addButton.addEventListener('click', () => {
+        let popup = document.querySelector('.add-new-project');
+        popup.classList.toggle('show');
+    });
+    // Toggle pop up when clicking the '+' button
+    let cancelButton = document.querySelector(`.add-cancel`);
+    cancelButton.addEventListener('click', () => {
         let popup = document.querySelector('.add-new-project');
         popup.classList.toggle('show');
     });
