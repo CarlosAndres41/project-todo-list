@@ -11,7 +11,7 @@ const taskFactory = (description, date, hour, priority) => {
 };
 
 const addTask = (user, index, task) => {
-    user.projects[index].push(task);
+    user.projects[index].tasks.push(task);
 };
 
 const displayName = (user) => {
