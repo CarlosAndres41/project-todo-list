@@ -6,6 +6,10 @@ const userFactory = (name) => {
     return { name, projects };
 };
 
+const taskFactory = (description, date, hour, priority) => {
+    return { description, date, hour, priority };
+};
+
 const displayName = (user) => {
     const welcomeUser = document.querySelector('.sidebar-user strong');
     welcomeUser.textContent = user.name;
