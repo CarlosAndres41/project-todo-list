@@ -10,6 +10,10 @@ const taskFactory = (description, date, hour, priority) => {
     return { description, date, hour, priority };
 };
 
+const addTask = (user, index, task) => {
+    user.projects[index].push(task);
+};
+
 const displayName = (user) => {
     const welcomeUser = document.querySelector('.sidebar-user strong');
     welcomeUser.textContent = user.name;
@@ -37,4 +41,6 @@ export {
     confirmDeleteProject,
     displayName,
     addProjectToUser,
+    taskFactory,
+    addTask,
 };
