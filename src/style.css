@@ -243,4 +243,23 @@ body {
 
 .main-display {
     background-image: url(./imgs/qwd83nc4xxf41.jpg);
+    position: relative;
+}
+
+.intro {
+    background-color: rgba(186, 215, 233, 0.3);
+    text-align: center;
+    width: 80%;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    border-radius: 6px;
+    color: var(--dark-blue);
+    padding-bottom: 10px;
+}
+
+.intro h1,
+.intro h3,
+.intro span {
+    padding: 10px;
 }
