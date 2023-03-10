@@ -22,4 +22,15 @@ const confirmDeleteProject = (user, index) => {
     }
 };
 
-export { userFactory, editProjectName, confirmDeleteProject, displayName };
+const addProjectToUser = (user, project) => {
+    let template = { projectName: project, tasks: [] };
+    user.projects.push(template);
+};
+
+export {
+    userFactory,
+    editProjectName,
+    confirmDeleteProject,
+    displayName,
+    addProjectToUser,
+};

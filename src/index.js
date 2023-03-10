@@ -7,5 +7,5 @@ const newUser = userFactory('User');
 displayName(newUser);
 
 editUserName(newUser);
-addProject();
+addProject(newUser);
 renderProjects(newUser);

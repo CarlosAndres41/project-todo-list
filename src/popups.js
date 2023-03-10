@@ -1,3 +1,6 @@
+import { addProjectToUser } from './user';
+import { renderProjects, removeAllProjects } from './my-projects';
+
 function toggleNamePopUp() {
     let popupForm = document.querySelector('.edit-form');
     popupForm.classList.toggle('show');
@@ -31,7 +34,7 @@ function editUserName(user) {
     nameConfirm.addEventListener('click', toggleNamePopUp);
 }
 
-function addProject() {
+function addProject(user) {
     // Toggle pop up when clicking the '+' button
     let addButton = document.querySelector(`.add-project-btn`);
     addButton.addEventListener('click', () => {
@@ -43,6 +46,21 @@ function addProject() {
     cancelButton.addEventListener('click', () => {
         let popup = document.querySelector('.add-new-project');
         popup.classList.toggle('show');
+    });
+
+    // Add project
+    let confirmAddButton = document.querySelector('.add-check');
+    confirmAddButton.addEventListener('click', () => {
+        let projectName = document.querySelector('#new-project-name').value;
+        if (projectName !== '') {
+            addProjectToUser(user, projectName);
+        }
+        // Close pop up
+        let popup = document.querySelector('.add-new-project');
+        popup.classList.toggle('show');
+        //Re -render projects
+        removeAllProjects();
+        renderProjects(user);
     });
 }
 
