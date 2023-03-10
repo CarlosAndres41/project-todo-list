@@ -241,8 +241,6 @@ body {
 
 /* Main display */
 
-.backgroud-img-conteiner {
+.main-display {
     background-image: url(./imgs/qwd83nc4xxf41.jpg);
-    opacity: 0.5;
-    height: 100%;
 }
