@@ -1,7 +1,27 @@
 const userFactory = (name) => {
     let projects = [
-        { projectName: 'Work', tasks: [] },
-        { projectName: 'Home', tasks: [] },
+        {
+            projectName: 'Home',
+            tasks: [
+                {
+                    description: 'Start by creating new tasks',
+                    date: '12-12-2023',
+                    hour: '12:00',
+                    priority: 'high',
+                },
+            ],
+        },
+        {
+            projectName: 'Work',
+            tasks: [
+                {
+                    description: 'Start by creating new tasks',
+                    date: '12-12-2023',
+                    hour: '12:00',
+                    priority: 'high',
+                },
+            ],
+        },
     ];
     return { name, projects };
 };
