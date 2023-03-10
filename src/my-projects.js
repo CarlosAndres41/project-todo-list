@@ -48,6 +48,14 @@ function addProject(projectName) {
     container.appendChild(taskDiv);
 }
 
+function addTask(projectName, task) {
+    let tasksConteiner = document.querySelector(`.${projectName}-tasks`);
+    let taskElement = document.createElement('p');
+    taskElement.classList.add('task');
+    taskElement.textContent = task.description;
+    tasksConteiner.appendChild(taskElement);
+}
+
 function removeAllProjects() {
     let container = document.querySelector('.projects-container');
     while (container.firstChild) {
@@ -59,6 +67,10 @@ function renderProjects(user) {
     // Create Projects
     user.projects.forEach((project) => {
         addProject(project.projectName);
+        let tasks = project.tasks;
+        tasks.forEach((task) => {
+            addTask(project.projectName, task);
+        });
     });
 
     // Edit Project name
