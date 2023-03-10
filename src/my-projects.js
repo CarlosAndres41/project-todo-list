@@ -42,6 +42,10 @@ function addProject(projectName) {
     buttons.appendChild(projectEditPopUp(projectName));
     buttons.appendChild(deleteProject(projectName));
     container.appendChild(prDiv);
+
+    let taskDiv = document.createElement('div');
+    taskDiv.classList.add(`${projectName}-tasks`);
+    container.appendChild(taskDiv);
 }
 
 function removeAllProjects() {
