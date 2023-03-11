@@ -9,4 +9,4 @@ displayName(newUser);
 editUserName(newUser);
 addProject(newUser);
 renderProjects(newUser);
-showTasks();
+showTasks(newUser);
