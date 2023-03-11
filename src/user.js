@@ -5,7 +5,7 @@ const userFactory = (name) => {
             tasks: [
                 {
                     description: 'Start by creating new tasks',
-                    date: '12-12-2023',
+                    date: '11-03-2023',
                     hour: '12:00',
                     priority: 'high',
                 },
@@ -16,7 +16,7 @@ const userFactory = (name) => {
             tasks: [
                 {
                     description: 'Start by creating new tasks',
-                    date: '12-12-2023',
+                    date: '12-03-2023',
                     hour: '12:00',
                     priority: 'normal',
                 },
