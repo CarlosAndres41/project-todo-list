@@ -17,13 +17,13 @@ function createDiv(projectName, tasks) {
 
     tasks.forEach((task) => {
         const individualTask = document.createElement('div');
-        individualTask.classList.add('.individual-task');
+        individualTask.classList.add('individual-task-div');
         if (task.priority === 'high') {
-            individualTask.classList.add('.priority-task');
+            individualTask.classList.add('priority-task');
         }
 
         const taskDescription = document.createElement('div');
-        taskDescription.classList.add('.task-description');
+        taskDescription.classList.add('task-description');
 
         const checkBox = document.createElement('input');
         checkBox.setAttribute('type', 'checkbox');
@@ -33,14 +33,14 @@ function createDiv(projectName, tasks) {
         taskDescription.appendChild(description);
 
         const taskDate = document.createElement('div');
-        taskDate.classList.add('.task-date');
+        taskDate.classList.add('task-date');
 
         const date = document.createElement('p');
         date.textContent = task.date;
         taskDate.appendChild(date);
 
         const taskIcons = document.createElement('div');
-        taskIcons.classList.add('.task-icons');
+        taskIcons.classList.add('task-icons');
 
         let span1 = document.createElement('span');
         span1.classList.add('high-priority');
@@ -60,13 +60,13 @@ function createDiv(projectName, tasks) {
         taskIcons.appendChild(span2);
 
         const taskHour = document.createElement('p');
-        taskHour.classList.add('.task-hour');
+        taskHour.classList.add('task-hour');
         taskHour.textContent = task.hour;
 
         individualTask.appendChild(taskDescription);
         individualTask.appendChild(taskDate);
-        individualTask.appendChild(taskIcons);
         individualTask.appendChild(taskHour);
+        individualTask.appendChild(taskIcons);
 
         tasksDiv.appendChild(individualTask);
     });

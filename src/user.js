@@ -18,7 +18,7 @@ const userFactory = (name) => {
                     description: 'Start by creating new tasks',
                     date: '12-12-2023',
                     hour: '12:00',
-                    priority: 'high',
+                    priority: 'normal',
                 },
             ],
         },

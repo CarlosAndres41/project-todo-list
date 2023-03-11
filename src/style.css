@@ -279,3 +279,38 @@ body {
 .project p:hover {
     color: var(--purple);
 }
+
+.project-title {
+    background-color: rgba(43, 52, 103, 0.4);
+    padding: 1rem;
+    color: var(--purple);
+    text-align: right;
+}
+
+.tasks-div {
+    padding: 3rem;
+}
+
+.individual-task-div {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(186, 215, 233, 0.5);
+    color: var(--purple);
+    border-radius: 6px;
+}
+
+.individual-task-div.priority-task {
+    background-color: rgb(235, 69, 95, 0.5);
+    color: var(--purple);
+}
+
+.task-description,
+.task-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.task-hour {
+    align-self: flex-end;
+}
