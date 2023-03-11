@@ -16,6 +16,9 @@ function createDiv(projectName, tasks) {
     tasks.forEach((task) => {
         const individualTask = document.createElement('div');
         individualTask.classList.add('.individual-task');
+        if (task.priority === 'high') {
+            individualTask.classList.add('.priority-task');
+        }
 
         const taskDescription = document.createElement('div');
         taskDescription.classList.add('.task-description');
@@ -54,9 +57,14 @@ function createDiv(projectName, tasks) {
         span2.appendChild(logo2);
         taskIcons.appendChild(span2);
 
+        const taskHour = document.createElement('p');
+        taskHour.classList.add('.task-hour');
+        taskHour.textContent = task.hour;
+
         individualTask.appendChild(taskDescription);
         individualTask.appendChild(taskDate);
         individualTask.appendChild(taskIcons);
+        individualTask.appendChild(taskHour);
 
         tasksDiv.appendChild(individualTask);
     });
