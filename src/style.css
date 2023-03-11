@@ -271,3 +271,11 @@ body {
     padding-top: 3px;
     padding-bottom: 5px;
 }
+
+.project p {
+    cursor: pointer;
+}
+
+.project p:hover {
+    color: var(--purple);
+}
