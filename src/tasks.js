@@ -1,6 +1,8 @@
 function clearMainDisplay() {
     const mainDisplay = document.querySelector('.main-display');
-    mainDisplay.removeChild(mainDisplay.firstElementChild);
+    while (mainDisplay.firstChild) {
+        mainDisplay.removeChild(mainDisplay.firstChild);
+    }
 }
 
 function createDiv(projectName, tasks) {
