@@ -314,3 +314,11 @@ body {
 .task-hour {
     align-self: flex-end;
 }
+
+.delete-task {
+    cursor: pointer;
+}
+
+.delete-task:hover {
+    color: var(--red);
+}
