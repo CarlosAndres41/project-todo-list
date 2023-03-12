@@ -1,5 +1,4 @@
 import { clearMainDisplay } from './tasks';
-import { format } from 'date-fns';
 
 function getPriorityTasks(user) {
     user.projects.forEach((project) => {

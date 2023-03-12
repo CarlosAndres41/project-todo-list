@@ -5,6 +5,7 @@ import { renderProjects } from './my-projects';
 import { showTasks } from './tasks';
 import { showTodaysTasks } from './today';
 import { showUpcomingTasks } from './upcoming';
+import { showPriorityTasks } from './high-priority';
 
 const newUser = userFactory('User');
 displayName(newUser);
