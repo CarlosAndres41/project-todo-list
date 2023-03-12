@@ -6,7 +6,8 @@ import {
     addTaskPopUp,
     toggleAddTask,
 } from './popups';
-import { editProjectName, confirmDeleteProject } from './user';
+import { editProjectName, confirmDeleteProject, taskFactory } from './user';
+import { format } from 'date-fns';
 
 function addProject(projectName) {
     let container = document.querySelector('.projects-container');
@@ -168,13 +169,18 @@ function renderProjects(user) {
     confirmAddArray.forEach((task, index) => {
         task.addEventListener('click', () => {
             let description = document.querySelector('.task-description');
-            console.log(description.value);
             let date = document.querySelector('.task-date');
-            console.log(date.value);
+            let dateArr = date.value.split('-');
+            let formattedDate = `${dateArr[2]}-${dateArr[1]}-${dateArr[0]}`;
             let hour = document.querySelector('.task-hour-popup');
-            console.log(hour.value);
             let priority = document.querySelector('.task-priority');
-            console.log(priority.value);
+            let newTask = taskFactory(
+                description.value,
+                formattedDate,
+                hour.value,
+                priority.value
+            );
+            console.log(newTask);
         });
     });
 }
