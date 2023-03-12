@@ -34,7 +34,17 @@ function addProject(projectName) {
     logo2.classList.add('delete-project-btn');
     logo2.setAttribute('value', projectName);
     span2.appendChild(logo2);
+    let span3 = document.createElement('span');
+    span3.classList.add('edit-project');
+    let logo3 = document.createElement('i');
+    logo3.classList.add('fa-solid');
+    logo3.classList.add('fa-plus');
+    // logo3.classList.add('fa-xs');
+    logo3.classList.add('delete-project-btn');
+    logo3.setAttribute('value', projectName);
+    span3.appendChild(logo3);
 
+    buttons.appendChild(span3);
     buttons.appendChild(span1);
     buttons.appendChild(span2);
     prDiv.appendChild(name);
