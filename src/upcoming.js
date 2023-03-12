@@ -21,7 +21,7 @@ function getUpcomingTasks(user) {
         let tasks = project.tasks;
         tasks.forEach((task) => {
             if (upcomingDates.includes(task.date)) {
-                todaysTasksArray.push(task);
+                upcomingTasksArray.push(task);
             }
         });
     });
@@ -32,11 +32,11 @@ function createDiv(tasks) {
     const display = document.querySelector('.main-display');
 
     const upcomingDiv = document.createElement('div');
-    upcomingDiv.classList.add('today-div');
+    upcomingDiv.classList.add('upcoming-div');
 
     const todayPrs = document.createElement('h1');
-    todayPrs.classList.add('today-title');
-    todayPrs.textContent = 'Today';
+    todayPrs.classList.add('upcoiming-title');
+    todayPrs.textContent = 'Upcomig';
 
     tasks.forEach((task) => {
         const individualTask = document.createElement('div');
@@ -99,15 +99,15 @@ function createDiv(tasks) {
 }
 
 function showUpcomingTasks(user) {
-    // let todayBtn = document.querySelector('.today .notif-text');
-    // let tasks = getTodaysTasks(user);
-    // todayBtn.addEventListener('click', () => {
-    //     clearMainDisplay();
-    //     createDiv(tasks);
-    // });
-    // // Display number of tasks
-    // let notification = document.querySelector('.today-notification');
-    // notification.textContent = `${tasks.length}`;
+    let upcomingBtn = document.querySelector('.upcoming .notif-text');
+    let tasks = getUpcomingTasks(user);
+    upcomingBtn.addEventListener('click', () => {
+        clearMainDisplay();
+        createDiv(tasks);
+    });
+    // Display number of tasks
+    let notification = document.querySelector('.upcoming-notification');
+    notification.textContent = `${tasks.length}`;
 }
 
 export { showUpcomingTasks };
