@@ -302,8 +302,8 @@ body {
 
 .individual-task-div {
     padding: 1rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     background-color: rgba(186, 215, 233, 0.5);
     color: var(--purple);
     border-radius: 6px;
@@ -320,8 +320,13 @@ body {
     gap: 1rem;
 }
 
-.task-hour {
-    align-self: flex-end;
+.task-hour,
+.task-date {
+    text-align: end;
+}
+
+.task-icons {
+    justify-content: end;
 }
 
 .delete-task {
