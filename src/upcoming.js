@@ -35,8 +35,8 @@ function createDiv(tasks) {
     upcomingDiv.classList.add('upcoming-div');
 
     const todayPrs = document.createElement('h1');
-    todayPrs.classList.add('upcoiming-title');
-    todayPrs.textContent = 'Upcomig';
+    todayPrs.classList.add('upcoming-title');
+    todayPrs.textContent = 'Upcoming';
 
     tasks.forEach((task) => {
         const individualTask = document.createElement('div');

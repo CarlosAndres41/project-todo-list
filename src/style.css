@@ -288,7 +288,8 @@ body {
 }
 
 .tasks-div,
-.today-div {
+.today-div,
+.upcoming-div {
     padding: 3rem;
 }
 
@@ -332,5 +333,12 @@ body {
     background-color: rgb(93, 156, 89, 0.5);
     padding: 1rem;
     color: var(--dark-blue);
+    text-align: right;
+}
+
+.upcoming-title {
+    background-color: rgb(249, 148, 23, 0.5);
+    padding: 1rem;
+    color: var(--purple);
     text-align: right;
 }
