@@ -15,18 +15,17 @@ function getUpcomingDates() {
 }
 
 function getUpcomingTasks(user) {
-    let todaysDate = new Date();
-    let todaysTasksArray = [];
-    let formatedDate = format(todaysDate, 'dd-MM-yyyy');
+    let upcomingDates = getUpcomingDates();
+    let upcomingTasksArray = [];
     user.projects.forEach((project) => {
         let tasks = project.tasks;
         tasks.forEach((task) => {
-            if (task.date === formatedDate) {
+            if (upcomingDates.includes(task.date)) {
                 todaysTasksArray.push(task);
             }
         });
     });
-    return todaysTasksArray;
+    return upcomingTasksArray;
 }
 
 function createDiv(tasks) {
@@ -109,7 +108,6 @@ function showUpcomingTasks(user) {
     // // Display number of tasks
     // let notification = document.querySelector('.today-notification');
     // notification.textContent = `${tasks.length}`;
-    console.log(getUpcomingDates());
 }
 
 export { showUpcomingTasks };
