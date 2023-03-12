@@ -88,11 +88,14 @@ function createDiv(tasks) {
 
 function showTodaysTasks(user) {
     let todayBtn = document.querySelector('.today .notif-text');
+    let tasks = getTodaysTasks(user);
     todayBtn.addEventListener('click', () => {
-        let tasks = getTodaysTasks(user);
         clearMainDisplay();
         createDiv(tasks);
     });
+    // Display number of tasks
+    let notification = document.querySelector('.today-notification');
+    notification.textContent = `${tasks.length}`;
 }
 
 export { showTodaysTasks };
