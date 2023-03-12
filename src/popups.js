@@ -140,6 +140,10 @@ function addTaskPopUp(projectName) {
     container.classList.add('add-task-project');
     container.setAttribute('id', `${projectName}-task`);
 
+    let title = document.createElement('h4');
+    title.textContent = 'Create a new task';
+    container.appendChild(title);
+
     let description = document.createElement('input');
     description.setAttribute('type', 'text');
     description.setAttribute('placeholder', 'Write task description');
