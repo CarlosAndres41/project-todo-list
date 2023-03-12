@@ -3,11 +3,17 @@ import { format } from 'date-fns';
 
 function getTodaysTasks(user) {
     let todaysDate = new Date();
+    let todaysTasksArray = [];
     let formatedDate = format(todaysDate, 'dd-MM-yyyy');
-    // continue here: use date-fns to format todays date to dd-mm-yyyy
-    // create todaysTasks object
-    // Add task if task.date == today's date
-    // return todaysTasks
+    user.projects.forEach((project) => {
+        let tasks = project.tasks;
+        tasks.forEach((task) => {
+            if (task.date === formatedDate) {
+                todaysTasksArray.push(task);
+            }
+        });
+    });
+    return todaysTasksArray;
 }
 
 function createDiv(tasks) {
