@@ -1,15 +1,16 @@
 import { clearMainDisplay } from './tasks';
 
 function getPriorityTasks(user) {
+    let highPArray = [];
     user.projects.forEach((project) => {
         let tasks = project.tasks;
         tasks.forEach((task) => {
             if (task.priority === 'high') {
-                todaysTasksArray.push(task);
+                highPArray.push(task);
             }
         });
     });
-    return todaysTasksArray;
+    return highPArray;
 }
 
 function createDiv(tasks) {
@@ -83,7 +84,7 @@ function createDiv(tasks) {
 }
 
 function showPriorityTasks(user) {
-    let priorityBtn = document.querySelector('.high-prioritytoday .notif-text');
+    let priorityBtn = document.querySelector('.high-priority .notif-text');
     let tasks = getPriorityTasks(user);
     priorityBtn.addEventListener('click', () => {
         clearMainDisplay();

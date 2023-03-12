@@ -15,3 +15,4 @@ renderProjects(newUser);
 showTasks(newUser);
 showTodaysTasks(newUser);
 showUpcomingTasks(newUser);
+showPriorityTasks(newUser);
