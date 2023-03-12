@@ -79,17 +79,19 @@ function createDiv(tasks) {
         individualTask.appendChild(taskHour);
         individualTask.appendChild(taskIcons);
 
-        tasksDiv.appendChild(individualTask);
+        todayDiv.appendChild(individualTask);
     });
 
-    display.appendChild(project);
-    display.appendChild(tasksDiv);
+    display.appendChild(todayPrs);
+    display.appendChild(todayDiv);
 }
 
 function showTodaysTasks(user) {
     let todayBtn = document.querySelector('.today .notif-text');
     todayBtn.addEventListener('click', () => {
-        getTodaysTasks(user);
+        let tasks = getTodaysTasks(user);
+        clearMainDisplay();
+        createDiv(tasks);
     });
 }
 
