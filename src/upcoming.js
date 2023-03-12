@@ -1,7 +1,20 @@
 import { clearMainDisplay } from './tasks';
 import { format } from 'date-fns';
 
-function getTodaysTasks(user) {
+function getUpcomingDates() {
+    let upcomingDates = [];
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const dayAftTomorrow = new Date(today);
+    dayAftTomorrow.setDate(dayAftTomorrow.getDate() + 2);
+    upcomingDates.push(format(today, 'dd-MM-yyyy'));
+    upcomingDates.push(format(tomorrow, 'dd-MM-yyyy'));
+    upcomingDates.push(format(dayAftTomorrow, 'dd-MM-yyyy'));
+    return upcomingDates;
+}
+
+function getUpcomingTasks(user) {
     let todaysDate = new Date();
     let todaysTasksArray = [];
     let formatedDate = format(todaysDate, 'dd-MM-yyyy');
@@ -19,8 +32,8 @@ function getTodaysTasks(user) {
 function createDiv(tasks) {
     const display = document.querySelector('.main-display');
 
-    const todayDiv = document.createElement('div');
-    todayDiv.classList.add('today-div');
+    const upcomingDiv = document.createElement('div');
+    upcomingDiv.classList.add('today-div');
 
     const todayPrs = document.createElement('h1');
     todayPrs.classList.add('today-title');
@@ -79,23 +92,24 @@ function createDiv(tasks) {
         individualTask.appendChild(taskHour);
         individualTask.appendChild(taskIcons);
 
-        todayDiv.appendChild(individualTask);
+        upcomingDiv.appendChild(individualTask);
     });
 
     display.appendChild(todayPrs);
-    display.appendChild(todayDiv);
+    display.appendChild(upcomingDiv);
 }
 
-function showTodaysTasks(user) {
-    let todayBtn = document.querySelector('.today .notif-text');
-    let tasks = getTodaysTasks(user);
-    todayBtn.addEventListener('click', () => {
-        clearMainDisplay();
-        createDiv(tasks);
-    });
-    // Display number of tasks
-    let notification = document.querySelector('.today-notification');
-    notification.textContent = `${tasks.length}`;
+function showUpcomingTasks(user) {
+    // let todayBtn = document.querySelector('.today .notif-text');
+    // let tasks = getTodaysTasks(user);
+    // todayBtn.addEventListener('click', () => {
+    //     clearMainDisplay();
+    //     createDiv(tasks);
+    // });
+    // // Display number of tasks
+    // let notification = document.querySelector('.today-notification');
+    // notification.textContent = `${tasks.length}`;
+    console.log(getUpcomingDates());
 }
 
-export { showTodaysTasks };
+export { showUpcomingTasks };

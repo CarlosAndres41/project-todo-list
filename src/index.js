@@ -4,6 +4,7 @@ import { editUserName, addProject } from './popups';
 import { renderProjects } from './my-projects';
 import { showTasks } from './tasks';
 import { showTodaysTasks } from './today';
+import { showUpcomingTasks } from './upcoming';
 
 const newUser = userFactory('User');
 displayName(newUser);
@@ -12,3 +13,4 @@ addProject(newUser);
 renderProjects(newUser);
 showTasks(newUser);
 showTodaysTasks(newUser);
+showUpcomingTasks(newUser);
