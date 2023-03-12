@@ -162,6 +162,21 @@ function renderProjects(user) {
             toggleAddTask(e.target.attributes.value.nodeValue);
         });
     });
+    // Confirm and add task
+    let confirmAddTask = document.querySelectorAll('.confirm-add-task');
+    let confirmAddArray = Array.from(confirmAddTask);
+    confirmAddArray.forEach((task, index) => {
+        task.addEventListener('click', () => {
+            let description = document.querySelector('.task-description');
+            console.log(description.value);
+            let date = document.querySelector('.task-date');
+            console.log(date.value);
+            let hour = document.querySelector('.task-hour-popup');
+            console.log(hour.value);
+            let priority = document.querySelector('.task-priority');
+            console.log(priority.value);
+        });
+    });
 }
 
 export { addProject, removeAllProjects, renderProjects };
