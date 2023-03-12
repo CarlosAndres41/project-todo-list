@@ -289,7 +289,8 @@ body {
 
 .tasks-div,
 .today-div,
-.upcoming-div {
+.upcoming-div,
+.highP-div {
     padding: 3rem;
 }
 
@@ -341,4 +342,15 @@ body {
     padding: 1rem;
     color: var(--purple);
     text-align: right;
+}
+
+.highP-title {
+    background-color: rgb(235, 69, 95, 0.5);
+    padding: 1rem;
+    color: var(--purple);
+    text-align: right;
+}
+
+.highP-div .individual-task-div.priority-task {
+    background-color: rgb(235, 69, 95, 0.2);
 }
