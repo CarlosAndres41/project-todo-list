@@ -287,7 +287,8 @@ body {
     text-align: right;
 }
 
-.tasks-div {
+.tasks-div,
+.today-div {
     padding: 3rem;
 }
 
@@ -321,4 +322,15 @@ body {
 
 .delete-task:hover {
     color: var(--red);
+}
+
+.today-div .individual-task-div.priority-task {
+    background-color: rgb(235, 69, 95, 0.5);
+}
+
+.today-title {
+    background-color: rgb(93, 156, 89, 0.5);
+    padding: 1rem;
+    color: var(--dark-blue);
+    text-align: right;
 }

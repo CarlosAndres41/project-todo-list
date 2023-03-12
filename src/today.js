@@ -36,11 +36,11 @@ function createDiv(tasks) {
         const taskDescription = document.createElement('div');
         taskDescription.classList.add('task-description');
 
-        const checkBox = document.createElement('input');
-        checkBox.setAttribute('type', 'checkbox');
+        // const checkBox = document.createElement('input');
+        // checkBox.setAttribute('type', 'checkbox');
         const description = document.createElement('p');
         description.textContent = task.description;
-        taskDescription.appendChild(checkBox);
+        // taskDescription.appendChild(checkBox);
         taskDescription.appendChild(description);
 
         const taskDate = document.createElement('div');
