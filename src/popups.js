@@ -16,6 +16,11 @@ function toggleDeleteProject(projectName) {
     editPopUp.classList.toggle('show');
 }
 
+function toggleAddTask(projectName) {
+    let addPopUp = document.getElementById(`${projectName}-task`);
+    addPopUp.classList.toggle('show');
+}
+
 function editUserName(user) {
     // Edit name popup
     let editNamePopup = document.querySelector('.edit-user');
@@ -130,6 +135,62 @@ function deleteProject(projectName) {
     return container;
 }
 
+function addTaskPopUp(projectName) {
+    let container = document.createElement('div');
+    container.classList.add('add-task-project');
+    container.setAttribute('id', `${projectName}-task`);
+
+    let description = document.createElement('input');
+    description.setAttribute('type', 'text');
+    description.setAttribute('placeholder', 'Write task description');
+    description.classList.add('task-description');
+    container.appendChild(description);
+
+    let date = document.createElement('input');
+    date.setAttribute('type', 'date');
+    date.setAttribute('value', new Date());
+    date.classList.add('task-date');
+    container.appendChild(date);
+
+    let hour = document.createElement('input');
+    hour.setAttribute('type', 'time');
+    hour.classList.add('task-hour');
+    container.appendChild(hour);
+
+    let priority = document.createElement('select');
+    priority.classList.add('task-priority');
+    let value1 = document.createElement('option');
+    value1.textContent = 'Normal';
+    value1.setAttribute('value', 'normal');
+    priority.appendChild(value1);
+    let value2 = document.createElement('option');
+    value2.textContent = 'High';
+    value2.setAttribute('value', 'high');
+    priority.appendChild(value2);
+    container.appendChild(priority);
+
+    let buttons = document.createElement('div');
+    let span1 = document.createElement('span');
+    span1.classList.add('ok');
+    let logo1 = document.createElement('i');
+    logo1.classList.add('fa-solid');
+    logo1.classList.add('fa-check');
+    span1.appendChild(logo1);
+    let span2 = document.createElement('span');
+    span2.classList.add('cancel');
+    let logo2 = document.createElement('i');
+    logo2.classList.add('fa-solid');
+    logo2.classList.add('fa-xmark');
+    logo2.setAttribute('value', projectName);
+    span2.appendChild(logo2);
+    buttons.appendChild(span1);
+    buttons.appendChild(span2);
+
+    container.appendChild(buttons);
+
+    return container;
+}
+
 export {
     toggleNamePopUp,
     projectEditPopUp,
@@ -138,4 +199,6 @@ export {
     toggleDeleteProject,
     addProject,
     editUserName,
+    toggleAddTask,
+    addTaskPopUp,
 };

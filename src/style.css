@@ -65,7 +65,8 @@ body {
 .edit-form,
 .edit-current-project,
 .delete-current-project,
-.add-new-project {
+.add-new-project,
+.add-task-project {
     visibility: hidden;
     width: 160px;
     background-color: var(--light-blue);
@@ -98,7 +99,7 @@ body {
 /* Toggle this class - hide and show the popup */
 .show {
     visibility: visible;
-    z-index: 0;
+    z-index: 3;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
 }
@@ -195,7 +196,9 @@ body {
 }
 
 .add-pr-button,
-.edit-project {
+.edit-project,
+.delete-project,
+.add-new-task {
     opacity: 0.3;
     cursor: pointer;
 }
@@ -218,7 +221,8 @@ body {
 
 .edit-current-project,
 .delete-current-project,
-.add-new-project {
+.add-new-project,
+.add-task-project {
     bottom: 0%;
     left: 150%;
     margin-left: -80px;

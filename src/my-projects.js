@@ -3,6 +3,8 @@ import {
     toggleEditProject,
     deleteProject,
     toggleDeleteProject,
+    addTaskPopUp,
+    toggleAddTask,
 } from './popups';
 import { editProjectName, confirmDeleteProject } from './user';
 
@@ -26,7 +28,7 @@ function addProject(projectName) {
     logo1.setAttribute('value', projectName);
     span1.appendChild(logo1);
     let span2 = document.createElement('span');
-    span2.classList.add('edit-project');
+    span2.classList.add('delete-project');
     let logo2 = document.createElement('i');
     logo2.classList.add('fa-regular');
     logo2.classList.add('fa-trash-can');
@@ -35,12 +37,11 @@ function addProject(projectName) {
     logo2.setAttribute('value', projectName);
     span2.appendChild(logo2);
     let span3 = document.createElement('span');
-    span3.classList.add('edit-project');
+    span3.classList.add('add-new-task');
     let logo3 = document.createElement('i');
     logo3.classList.add('fa-solid');
     logo3.classList.add('fa-plus');
-    // logo3.classList.add('fa-xs');
-    logo3.classList.add('delete-project-btn');
+    logo3.classList.add('add-new-task-btn');
     logo3.setAttribute('value', projectName);
     span3.appendChild(logo3);
 
@@ -51,6 +52,7 @@ function addProject(projectName) {
     prDiv.appendChild(buttons);
     buttons.appendChild(projectEditPopUp(projectName));
     buttons.appendChild(deleteProject(projectName));
+    buttons.appendChild(addTaskPopUp(projectName));
     container.appendChild(prDiv);
 
     let taskDiv = document.createElement('div');
@@ -142,6 +144,15 @@ function renderProjects(user) {
             confirmDeleteProject(user, index);
             removeAllProjects();
             renderProjects(user);
+        });
+    });
+
+    // Add tasks
+    // all add task buttons
+    let addTaskBtns = document.querySelectorAll('.add-new-task');
+    addTaskBtns.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            toggleAddTask(e.target.attributes.value.nodeValue);
         });
     });
 }
