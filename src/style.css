@@ -126,7 +126,8 @@ body {
 .form-check,
 .ok,
 .delete-confirm,
-.add-check {
+.add-check,
+.confirm-add-task {
     color: var(--dark-green);
     cursor: pointer;
 }
@@ -134,7 +135,8 @@ body {
 .form-cancel,
 .cancel,
 .cancel-delete,
-.add-cancel {
+.add-cancel,
+.cancel-add-task {
     color: var(--red);
     cursor: pointer;
 }
@@ -357,4 +359,8 @@ body {
 
 .highP-div .individual-task-div.priority-task {
     background-color: rgb(235, 69, 95, 0.2);
+}
+
+.add-task-project {
+    width: 250px;
 }

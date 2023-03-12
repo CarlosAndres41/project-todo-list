@@ -155,6 +155,13 @@ function renderProjects(user) {
             toggleAddTask(e.target.attributes.value.nodeValue);
         });
     });
+    // Cancel addTask
+    let cancelAddTaskBtns = document.querySelectorAll('.cancel-add-task');
+    cancelAddTaskBtns.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            toggleAddTask(e.target.attributes.value.nodeValue);
+        });
+    });
 }
 
 export { addProject, removeAllProjects, renderProjects };

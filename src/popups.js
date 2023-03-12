@@ -154,7 +154,7 @@ function addTaskPopUp(projectName) {
 
     let hour = document.createElement('input');
     hour.setAttribute('type', 'time');
-    hour.classList.add('task-hour');
+    hour.classList.add('task-hour-popup');
     container.appendChild(hour);
 
     let priority = document.createElement('select');
@@ -171,13 +171,13 @@ function addTaskPopUp(projectName) {
 
     let buttons = document.createElement('div');
     let span1 = document.createElement('span');
-    span1.classList.add('ok');
+    span1.classList.add('confirm-add-task');
     let logo1 = document.createElement('i');
     logo1.classList.add('fa-solid');
     logo1.classList.add('fa-check');
     span1.appendChild(logo1);
     let span2 = document.createElement('span');
-    span2.classList.add('cancel');
+    span2.classList.add('cancel-add-task');
     let logo2 = document.createElement('i');
     logo2.classList.add('fa-solid');
     logo2.classList.add('fa-xmark');
