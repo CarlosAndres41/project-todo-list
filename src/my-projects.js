@@ -7,6 +7,10 @@ import {
     toggleAddTask,
 } from './popups';
 import { editProjectName, confirmDeleteProject, taskFactory } from './user';
+import { showTasks } from './tasks';
+import { showTodaysTasks } from './today';
+import { showUpcomingTasks } from './upcoming';
+import { showPriorityTasks } from './high-priority';
 import { format } from 'date-fns';
 
 function addProject(projectName) {
@@ -167,7 +171,7 @@ function renderProjects(user) {
     let confirmAddTask = document.querySelectorAll('.confirm-add-task');
     let confirmAddArray = Array.from(confirmAddTask);
     confirmAddArray.forEach((task, index) => {
-        task.addEventListener('click', () => {
+        task.addEventListener('click', (e) => {
             let description = document.querySelector('.task-description');
             let date = document.querySelector('.task-date');
             let dateArr = date.value.split('-');
@@ -180,7 +184,14 @@ function renderProjects(user) {
                 hour.value,
                 priority.value
             );
-            console.log(newTask);
+            user.projects[index].tasks.push(newTask);
+            toggleAddTask(confirmAddTask[index].offsetParent.id.split('-')[0]);
+            removeAllProjects();
+            renderProjects(user);
+            showTasks(user);
+            showTodaysTasks(user);
+            showUpcomingTasks(user);
+            showPriorityTasks(user);
         });
     });
 }
