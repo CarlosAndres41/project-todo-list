@@ -87,4 +87,4 @@ function showTasks(user) {
     });
 }
 
-export { showTasks };
+export { showTasks, clearMainDisplay, createDiv };
