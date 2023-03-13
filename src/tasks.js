@@ -1,3 +1,5 @@
+import { renderProjects, removeAllProjects } from './my-projects';
+
 function clearMainDisplay() {
     const mainDisplay = document.querySelector('.main-display');
     while (mainDisplay.firstChild) {
@@ -60,8 +62,6 @@ function createDiv(projectName, tasks, user) {
         taskIcons.appendChild(span2);
         let taskIndex = index;
         span2.onclick = (task) => {
-            console.log(task);
-            console.log(taskIndex);
             let projectIndex;
             user.projects.forEach((project, index) => {
                 if (project.projectName === projectName) {
@@ -69,7 +69,10 @@ function createDiv(projectName, tasks, user) {
                 }
             });
             user.projects[projectIndex].tasks.splice(taskIndex, 1);
-            console.log(user.projects[projectIndex].tasks);
+            clearMainDisplay();
+            createDiv(projectName, tasks, user);
+            removeAllProjects();
+            renderProjects(user);
         };
 
         const taskHour = document.createElement('p');
