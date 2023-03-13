@@ -57,12 +57,17 @@ const addProjectToUser = (user, project) => {
     user.projects.push(template);
 };
 
-const deleteTask = (user) => {
+function deleteTask(user) {
+    console.log(user);
     let deleteTaskBtns = document.querySelectorAll('.delete-task');
-    deleteTaskBtns.forEach(button, () => {
-        console.log(deleteTaskBtns);
+    console.log(deleteTaskBtns);
+    deleteTaskBtns.forEach((button) => {
+        console.log(button);
+        button.addEventListener('click', () => {
+            console.log('clicked');
+        });
     });
-};
+}
 
 export {
     userFactory,
@@ -72,4 +77,5 @@ export {
     addProjectToUser,
     taskFactory,
     addTask,
+    deleteTask,
 };

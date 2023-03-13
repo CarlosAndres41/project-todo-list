@@ -5,7 +5,7 @@ function clearMainDisplay() {
     }
 }
 
-function createDiv(projectName, tasks) {
+function createDiv(projectName, tasks, user) {
     const display = document.querySelector('.main-display');
 
     const tasksDiv = document.createElement('div');
@@ -15,7 +15,7 @@ function createDiv(projectName, tasks) {
     project.classList.add('project-title');
     project.textContent = projectName;
 
-    tasks.forEach((task) => {
+    tasks.forEach((task, index) => {
         const individualTask = document.createElement('div');
         individualTask.classList.add('individual-task-div');
         if (task.priority === 'high') {
@@ -58,6 +58,19 @@ function createDiv(projectName, tasks) {
         logo2.classList.add('fa-trash-can');
         span2.appendChild(logo2);
         taskIcons.appendChild(span2);
+        let taskIndex = index;
+        span2.onclick = (task) => {
+            console.log(task);
+            console.log(taskIndex);
+            let projectIndex;
+            user.projects.forEach((project, index) => {
+                if (project.projectName === projectName) {
+                    projectIndex = index;
+                }
+            });
+            user.projects[projectIndex].tasks.splice(taskIndex, 1);
+            console.log(user.projects[projectIndex].tasks);
+        };
 
         const taskHour = document.createElement('p');
         taskHour.classList.add('task-hour');
@@ -82,7 +95,7 @@ function showTasks(user) {
             clearMainDisplay();
             let projectName = project.classList[0].split('-')[0];
             let tasks = user.projects[index].tasks;
-            createDiv(projectName, tasks);
+            createDiv(projectName, tasks, user);
         });
     });
 }
