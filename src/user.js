@@ -57,6 +57,13 @@ const addProjectToUser = (user, project) => {
     user.projects.push(template);
 };
 
+const deleteTask = (user) => {
+    let deleteTaskBtns = document.querySelectorAll('.delete-task');
+    deleteTaskBtns.forEach(button, () => {
+        console.log(deleteTaskBtns);
+    });
+};
+
 export {
     userFactory,
     editProjectName,
